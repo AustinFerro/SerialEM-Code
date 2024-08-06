@@ -1,4 +1,4 @@
-# SerialEM_PythonCodeandMatLabCode
+# SerialEM Python Code and MatLab Code
 #Austin Ferro 2024
 
 This is a repository of python and matlab scripts and data that were used to analyze the Microns cortical 1mm^3 dataset (https://www.microns-explorer.org/cortical-mm3)
