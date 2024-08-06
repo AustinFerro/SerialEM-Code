@@ -63,9 +63,3 @@ title('Distribution of Minimum Distances');
 xlabel('Minimum Distance (um)');
 ylabel('Cumulative  Frequency');
 legend('Simulated Data', 'Observed Data');
-
-
-    for i = 1:size(OPC2_Contacts, 1)
-        diffs = bsxfun(@minus, OPC2_centroid, OPC2_Contacts(i, :));
-        distances = sqrt(sum(diffs.^2, 2));
-    end
