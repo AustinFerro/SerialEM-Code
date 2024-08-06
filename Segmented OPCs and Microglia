@@ -1,0 +1,490 @@
+segmented OPC and microglia pairs
+
+OPC_segs [864691133675239408, 864691135013064342, 864691135103166313, 864691135104006221, 864691135251158930, 864691135341000645, 864691135341154245, 864691135356123122, 864691135373600968, 864691135382485210, 864691135385226069, 864691135432858866, 864691135467574156, 864691135474817344, 864691135501812829, 864691135556573682, 864691135560521185, 864691135564837719, 864691135575703236, 864691135583926258, 864691135585163132, 864691135587279427, 864691135677285316, 864691135724216747, 864691135771642619, 864691135807185949, 864691135875359475, 864691135945508388, 864691135986888963, 864691136020743063, 864691136099774837, 864691136226952529, 864691136311953725, 864691136443750787, 864691136482877996, 864691136717798774, 864691136723500285, 864691136740403292, 864691136951614687]
+
+
+microglia_segs = [864691135274083813, 864691135340957893, 864691135340994757, 864691135348493527, 864691135379514160, 864691135385217109, 864691135426488382, 864691135460184562, 864691135474651456, 864691135488229946, 864691135488383034, 864691135512835058, 864691135537608241, 864691135546216900, 864691135571491570, 864691135582107890, 864691135583768899, 864691135594001685, 864691135601220931, 864691135603070531, 864691135618569535, 864691135636906180, 864691135639002427, 864691135644488003, 864691135649695491, 864691135671769796, 864691135717889684, 864691135718623537, 864691135740415083, 864691135753642189, 864691135790001830, 864691135799776354, 864691135864971133, 864691135951997987, 864691135953971720, 864691135968897893, 864691135982778248, 864691135995085218, 864691136017571490, 864691136032870040, 864691136043763080, 864691136046151563, 864691136111948766, 864691136194204392, 864691136272986302, 864691136273003710, 864691136290517522, 864691136307526551, 864691136438362486, 864691136685482606, 864691136686269550, 864691136739919470, 864691136782306158]
+
+
+
+864691135953742856, 864691136175019270
+
+#Neighboring Neuron
+opcname = "Neuron_1"
+scaled_soma = np.array([278762, 151398, 20956]) 
+soma = scaled_soma * scale
+OPC = 864691136443750787
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135953795080, 864691135700220795]) 
+# set up vars
+all_pts = np.empty(len(microglia_meshes),dtype=object)
+pt_actors = np.empty(len(microglia_meshes),dtype=object)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+#Neighboring Neuron
+opcname = "Neuron_2"
+scaled_soma = np.array([280645, 149545, 20759]) 
+soma = scaled_soma * scale
+OPC = 864691135488227898
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135953795080, 864691135700220795]) 
+# set up vars
+all_pts = np.empty(len(microglia_meshes),dtype=object)
+pt_actors = np.empty(len(microglia_meshes),dtype=object)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+#Neighboring Neuron
+opcname = "Neuron_3_OPC1"
+scaled_soma = np.array([280645, 149545, 20759]) 
+soma = scaled_soma * scale
+OPC = 864691135488227898
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135953795080, 864691135700220795]) 
+# set up vars
+all_pts = np.empty(len(microglia_meshes),dtype=object)
+pt_actors = np.empty(len(microglia_meshes),dtype=object)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+
+#Neighboring Neuron to OPC
+opcname = "Neuron_3"
+scaled_soma = np.array([278993, 156365, 20846]) 
+soma = scaled_soma * scale
+OPC = 864691135888476553
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135488227898]) 
+# set up vars
+all_pts = np.empty(len(microglia_meshes),dtype=object)
+pt_actors = np.empty(len(microglia_meshes),dtype=object)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+
+
+
+####################################################################################################################################
+
+# OPC_1
+opcname = "OPC_1"
+scaled_soma = np.array([278993, 156365, 20846]) 
+soma = scaled_soma * scale
+OPC = 864691135888476553
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135953795080, 864691135700220795]) 
+# set up vars
+all_pts = np.empty(len(microglia_meshes),dtype=object)
+pt_actors = np.empty(len(microglia_meshes),dtype=object)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+
+
+# OPC_2
+opcname = "OPC_2"
+scaled_soma = np.array([252292, 152153, 24847]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135385226069 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135474651456]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+# OPC_3
+opcname = "OPC_3"
+scaled_soma = np.array([197828, 180219, 21742]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135356123122 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135488229946]) #Array if microglial segment IDs:
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+# OPC_4
+opcname = "OPC_4"
+scaled_soma = np.array([245230, 200771, 20850]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135986888963  #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135799776354, 864691136010903715]) #Array if microglial segment IDs  microglia 864691135799776354 needs proofreeding to get rid of some attached axons
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_5 #Need to find microglia near OPC
+opcname = "OPC_5"
+scaled_soma = np.array([208192, 143564, 19387]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135013064342 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135567839980]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_6 
+opcname = "OPC_6"
+scaled_soma = np.array([215325, 137392, 17099]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691136717798774 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135799776354]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_7 
+opcname = "OPC_7"
+scaled_soma = np.array([142384, 207112, 22631]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135104006221 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691136116250788]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+
+
+# OPC_8 
+opcname = "OPC_8"
+scaled_soma = np.array([278765, 118006, 18923]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135341000645 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135382968299]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_9
+opcname = "OPC_9"
+scaled_soma = np.array([198448, 180227, 21702]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135356123122 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135488229946]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+
+# OPC_10
+opcname = "OPC_10"
+scaled_soma = np.array([155301, 214443, 18797]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135373600968 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135636906180]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+
+# OPC_11
+opcname = "OPC_11"
+scaled_soma = np.array([172805, 169080, 24522]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135382485210 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691136812599662, 864691136309625434, 864691135686878688]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_12 #SUPER BEAUTIFUL!
+opcname = "OPC_12"
+scaled_soma = np.array([155301, 214443, 18797]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135432858866 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135501540674]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_13 NEED TO FIND MICROGLIA
+opcname = "OPC_13"
+scaled_soma = np.array([158274, 197919, 16082]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135373600968 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+# OPC_14 
+opcname = "OPC_14"
+scaled_soma = np.array([155301, 214443, 18797]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135474817344 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691136017571490]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+# OPC_15 # Need to find microglia
+opcname = "OPC_15"
+scaled_soma = np.array([]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC =  #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+# OPC_16
+opcname = "OPC_16"
+scaled_soma = np.array([250118, 159369, 23649]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135556573682 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691136272986302]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+# OPC_22
+opcname = "OPC_22"
+scaled_soma = np.array([236130, 124600, 16875]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135587279427 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135601220931]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_33
+opcname = "OPC_33"
+scaled_soma = np.array([197573, 131871, 20063]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691136443750787 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135644488003]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_38
+opcname = "OPC_38"
+scaled_soma = np.array([154774, 196750, 15429]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135502023605 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135501540674]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+# OPC_40
+opcname = "OPC_40"
+scaled_soma = np.array([169917, 143878, 19689]) #grab relative center of the soma through neuroglancer 
+soma = scaled_soma * scale
+OPC = 864691135968877157 #change to any OPC segment id
+OPC_mesh = mm.mesh(seg_id=OPC)
+microglia_meshes = np.array([864691135953971720]) #Array if microglial segment IDs
+# set up vars
+all_pts = [None] * len(microglia_meshes)
+pt_actors = [None] * len(microglia_meshes)
+contacts = np.empty(len(microglia_meshes),dtype=object)
+numcontacts_each = np.empty(len(microglia_meshes),dtype=object)
+num_microglia = len(microglia_meshes)
+
+
+
+OPC_1 = [864691135888476553, 278993, 156365, 20846]
+Micro_1 = [864691135953795080, 864691135274083813,864691135340957893, 864691135700220795]
+OPC_2 = [864691135385226069, 252265, 152167, 24907] # smaller and looks between an OPC and a microglia
+Micro_2 = [864691135474651456,864691135864728284, 864691136911663601, 864691136662832758]
+OPC_3 = [864691135356123122, 198428, 180010, 21703]
+Micro_3 = [864691135488229946]
+OPC_4 = [864691135986888963, 207843, 143900, 19340]
+Micro_4 = [864691135799776354, 864691136010903715]
+OPC_5 = [864691135013064342, 207669, 144545, 19301]
+Micro_5 = [864691135567839980]
+OPC_6 = [864691136717798774, 215325, 137392, 17099] # in contact with OPC 13
+Micro_6 =  [864691135815478095, 864691136874430574] # microglia 864691136874430574 needs proofreading 
+OPC_7 = [864691135104006221, 142384, 207112, 22631]
+Micro_7 = [864691136116250788] #Ask JoAnn to make sure that this is a microglia
+OPC_8 = [864691135341000645, 278765, 118006, 18923]
+Micro_8 = [864691135382968299] #Ask JoAnn to make sure that this is a microglia
+OPC_9 = [864691135356123122,198448, 180227, 21702] # dividing cell
+Micro_9 = [864691135488229946] #Possibly eating dying sister cell
+OPC_10 = [864691135373600968, 155301, 214443, 18797]
+Micro_10 = [864691135636906180]
+OPC_11 = [864691135382485210, 172805, 169080, 24522]
+Micro_11 = [864691136812599662, 864691136309625434, 864691135686878688]
+OPC_12 = [864691135432858866, 158274, 197919, 16082] #Ask JoAnn if microglia or OPC
+Micro_12 = [864691135501540674]
+OPC_13 = [864691135467574156, 217200, 137078, 17056]
+Micro_13 = 
+OPC_14 = [864691135474817344, 208999, 215580, 23268]
+Micro_14 = [864691136017571490]
+OPC_15 = [864691135501812829, 170493, 140093, 18341]
+Micro_15 = 
+OPC_16 = [864691135556573682, 250118, 159369, 23649]
+Micro_16 = [864691136272986302]
+OPC_17 = [864691135560521185, 234835, 220451, 24859]
+Micro_17 = 
+OPC_18 = [864691135564837719, 173042, 217974, 22061]
+Micro_18 = 
+OPC_19 = [864691135575703236, 178348, 161625, 20319]
+Micro_19 = 
+OPC_20 = [864691135583926258, 253815, 177726, 26033]
+Micro_20 = 
+OPC_21 = [864691135585163132, 233041, 157753, 24718]
+Micro_21 = 
+OPC_22 = [864691135587279427, 236130, 124600, 16875]
+Micro_22 = [864691135601220931]
+OPC_23 = [864691135677285316, 245435, 182484, 19526]
+Micro_23 = 
+OPC_24 = [864691135724216747, 251821, 150179, 16836]
+Micro_24 = 
+OPC_25 = [864691135771642619, 120282, 168283, 16380]
+Micro_25 =
+OPC_26 = [864691135807185949, 143489, 193780, 23178]
+Micro_26 = 
+OPC_27 = [864691135875359475, 160581, 173996, 19665]
+Micro_27 = 
+OPC_28 = [864691135945508388, 161006, 129241, 21613]
+Micro_28 = 
+OPC_29 = [864691136020743063, 162919, 121189, 22706]
+Micro_29 = 
+OPC_30 = [864691136099774837, 171965, 159709, 21472]
+Micro_30 = 
+OPC_31 = [864691136226952529, 175960, 144916, 22576]
+Micro_31 = 
+OPC_32 = [864691136311953725, 253027, 189986, 16051]
+Micro_32 = 
+OPC_33 = [864691136443750787, 197370, 132029, 20039]
+Micro_33 = [864691135644488003]
+OPC_34 = [864691136723500285, 143031, 206105, 24942]
+Micro_34 = 
+OPC_35 = [864691136740403292, 133680, 172035, 18168] 
+Micro_35 = 
+OPC_36 = [864691136482877996, 279845, 124341, 18635]
+Micro_36 = 
+OPC_37 = [864691136951614687, 155721, 148699, 20922]
+Micro_37 = []
+OPC-38 = [864691135502023605, 154774, 196750, 15429] #Ask JoAnn for confimraiton
+Micro_38 = [864691135501540674] #Also contacting OPC_12
+OPC_39 = [864691136705987702, 231461, 132734, 17293] #Ask JoAnn for confimraiton
+Micro_39
+OPC_40 = [864691135968877157, 169917, 143878, 19689] 
+Micro_40 = [864691135953971720]
+OPC_42 =
+
+
+
+864691135385226069, 864691135474651456, 864691135597353968, 864691135888476553, 864691136099774837, 864691136482877996, 864691136951614687
+
+
+Cells to check: 
+
+CELL_1 = [864691135597353968, 205498, 143373, 19088] #possible OPC, but unsure due to the regular nucleus 
+CELL_2 =[864691135013064342, 208382, 143631, 19404] #OPC
+CELL_4 = [864691136175019270, 202674, 135471, 17340] #Maybe a preOL?
+CELL_5 = [864691136486789906, 140592, 207637, 22494] #Maybe a preOL?
+CELL_6 = [864691136723537917, 135029, 211456, 23083] #Maybe a preOL?
+CELL_7 = [864691136084044396, 123786, 207162, 23648] #Maybe OPC
+CELL_9 = [864691135571274277, 140183, 206442, 24005] #Maybe OPC
+CELL_10 = [864691135657770882, 142424, 200298, 23796] #Maybe OPC
+CELL_11 = [864691135994558378, 286611, 117316, 20097] #Maybe OPC
+CELL_12 = [864691136010919587, 157680, 178272, 23619] #Maybe OPC
+CELL_13 = [864691136195746538, 157356, 202007, 16311] #Maybe OPC
+CELL_15 = [864691136198106090, 153956, 199158, 15873] #Maybe OPC  
+CELL_16 = [864691136198106090, 154034, 199537, 15920]
+Cell_17 = [864691135341000645, 330653, 207511, 23253] #MaybeOPC
+
+
+
+Cell_18 = [864691135948504266, 330568, 214573, 23056] # maybe OPC contacting 864691136032870040 microglia
+
+
+
+
+
+
+
+
+282848.0094	155373.6509	21827.43962
+278993, 156365, 20846
