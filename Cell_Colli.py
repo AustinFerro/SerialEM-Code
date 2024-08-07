@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Created on Tue Jul 23 11:28:08 2024
 
-@author: aferro
+@author: Austin Ferro
 
 Dependencies = caveclient 
 fcl (pip install python-fcl)
@@ -35,13 +34,12 @@ def main():
     
     print("Cell_Colli started at:",start_datetime)
     
-    base_directory = "C:/Users/thech/Documents/PyCode/MicronsEMdata/" #change to whatever base directory you would like to save data to
+    base_directory = "D:\MicronsEMdata" #change to whatever base directory you would like to save data to
     
     print("Script started")
     # MINNIE
     client = CAVEclient()
     client = CAVEclient('minnie65_public_v117')
-
     mm = trimesh_io.MeshMeta(cv_path=client.info.segmentation_source(),
                               disk_cache_path='minnie65_v117_meshes',map_gs_to_https=True)
     
@@ -96,7 +94,7 @@ def main():
         unique_p = np.unique(np.round(points, decimals=7), axis=0)
         return unique_p
     
-    def create_sphere_meshes(centers, radius):
+    def create_sphere_meshes(centers, radius, c):
         """
         Create mesh spheres for each center point and return them as vtk actors.
         
@@ -111,7 +109,7 @@ def main():
             sphere.apply_translation(center)
             
             # Convert the trimesh sphere to a vtk actor
-            sphere_actor = trimesh_vtk.mesh_actor(sphere, color=(1, 0, 1), opacity=.75)
+            sphere_actor = trimesh_vtk.mesh_actor(sphere, color=c, opacity=.75)
             sphere_actors.append(sphere_actor)
         
         return sphere_actors
@@ -188,15 +186,15 @@ def main():
   ############################################################################################################################################################  
   
     # set up vars
-    opcname = "OPCn" #change n to be any ID you would like
-    scaled_soma = np.array([x, y, z]) #grab relative center of the soma through neuroglancer  
+    opcname = "OPC12" #change n to be any ID you would like
+    scaled_soma = np.array([158274, 197919, 16082]) #grab relative center of the soma through neuroglancer  
     soma = scaled_soma * scale
-    OPC = seg_id  #change to any OPC segment id
+    OPC = 864691135432858866  #change to any OPC segment id
     OPC_mesh = mm.mesh(seg_id=OPC)
-    microglia_meshes = np.array([microglia_segID]) #add any microglia seg_id
+    microglia_meshes = np.array([864691135501540674]) #add any microglia seg_id
     contacts = np.empty(len(microglia_meshes),dtype=object)
     num_microglia = len(microglia_meshes)
-    PLs_file_path = f'{base_directory}\MicronsEMdata\OPCn_PLs.json' #Import extracted .json annotations 
+    PLs_file_path = 'D:\MicronsEMdata\OPC_PLs\OPC12_PLs.json' #Import extracted .json annotations 
         
     #To extract JSON data, click the {} button on the top right corner of the neuroglancer window and copy your annotation layer data into a text editor. Save as a .JSON and should work!
     
@@ -206,7 +204,6 @@ def main():
     PL_scale =PLs*scale
     PL_scale = PL_scale.reshape(-1,3)
     PL_unscale = PL_scale/scale
-    PL_actors = create_sphere_meshes(PL_scale, 500)
     PL_tree = cKDTree(PL_scale)  # Create a KD-tree with scaled PL positions
     dis = soma - PL_scale
     PL_distance_to_soma = np.linalg.norm(dis, axis=1)
@@ -326,6 +323,7 @@ def main():
     opc_pts_actors = []
     opc_pl_actors = []
     opc_pl_pts_actors = []
+    opc_ranPts_actors = []
     
     # Process each microglia mesh to create and store mesh actors
     for i, microglia_id in enumerate(microglia_meshes):
@@ -354,12 +352,15 @@ def main():
     opc_pts_actors.append(opc_actor)
     opc_pl_actors.append(opc_actor)
     opc_pl_pts_actors.append(opc_actor)
+    opc_ranPts_actors.append(opc_actor)
     
     # Add sphere actors for phagolysosomes
-    PL_actors = create_sphere_meshes(PL_scale, 500) 
+    PL_actors = create_sphere_meshes(PL_scale, 500, (1, 0, 1))
+    RanPts_actors = create_sphere_meshes(sampled_points, 500, (1,1,0))
     actors.extend(PL_actors)  # Use extend to add all elements of PL_actors to the actors list
     opc_pl_actors.extend(PL_actors)
     opc_pl_pts_actors.extend(PL_actors)
+    opc_ranPts_actors.extend(RanPts_actors)
     
     #initialize camera for video making
     camera_1 = trimesh_vtk.oriented_camera(OPC_mesh.centroid, backoff=250, backoff_vector=[0, 0, -1], up_vector = [0, -1, 0]) # make up negative y)# center the output vizualzation 200 units away from the centroid of the OPC, 
@@ -375,11 +376,18 @@ def main():
                                  do_save = True)
     
     #Make video of just the OPC with PLs
+    trimesh_vtk.render_actors_360(opc_ranPts_actors, 
+                                 directory = Path(f"{base_directory}/{opcname}_RanPoints_/{opcname}_RanPts/"), 
+                                 nframes = frames, 
+                                 camera_start = camera_1,
+                                 do_save = True)
+
     trimesh_vtk.render_actors_360(opc_pl_actors, 
                                  directory = Path(f"{base_directory}/{opcname}_Micro_Contacts/{opcname}_PL/"), 
                                  nframes = frames, 
                                  camera_start = camera_1,
                                  do_save = True)
+
 
     #Make video of OPC with Microglia
     trimesh_vtk.render_actors_360(opc_micro_actors, 
