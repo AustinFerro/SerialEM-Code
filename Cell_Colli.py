@@ -41,8 +41,7 @@ def main():
     # MINNIE
     client = CAVEclient()
     client = CAVEclient('minnie65_public_v117')
-    #seg_cv = cloudvolume.CloudVolume(client.info.segmentation_source(),progress=False)
-    #em_cv = cloudvolume.CloudVolume(client.info.image_source(),progress=False)
+
     mm = trimesh_io.MeshMeta(cv_path=client.info.segmentation_source(),
                               disk_cache_path='minnie65_v117_meshes',map_gs_to_https=True)
     
