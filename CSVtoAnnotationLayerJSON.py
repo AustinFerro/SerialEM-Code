@@ -2,7 +2,7 @@
 """
 Created on Tue Aug  6 21:27:36 2024
 
-@author: austi
+@author: Austin Ferro
 """
 
 def main():
