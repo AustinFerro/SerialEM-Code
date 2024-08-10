@@ -1,0 +1,486 @@
+{
+    "type": "annotation",
+    "source": {
+        "url": "local://annotations",
+        "transform": {
+            "outputDimensions": {
+                "x": [
+                    4e-09,
+                    "m"
+                ],
+                "y": [
+                    4e-09,
+                    "m"
+                ],
+                "z": [
+                    4e-08,
+                    "m"
+                ]
+            }
+        }
+    },
+    "tool": "annotatePoint",
+    "tab": "annotations",
+    "annotations": [
+        {
+            "point": [
+                245680,
+                196720,
+                21136
+            ],
+            "type": "point",
+            "id": "be3e123696a54d6b8864f3139632c57f"
+        },
+        {
+            "point": [
+                248984,
+                202935,
+                20828
+            ],
+            "type": "point",
+            "id": "288c43d9c21f4f23936fbfc46a857ec0"
+        },
+        {
+            "point": [
+                248156,
+                198448,
+                21272
+            ],
+            "type": "point",
+            "id": "8c519095161c408988dbcc5c074152b8"
+        },
+        {
+            "point": [
+                245644,
+                198584,
+                20923
+            ],
+            "type": "point",
+            "id": "d80c7ea1f1ff4615931a10ae0c87db54"
+        },
+        {
+            "point": [
+                237154,
+                201318,
+                20610
+            ],
+            "type": "point",
+            "id": "dafa19fc2ff64f44854174c5648b45f3"
+        },
+        {
+            "point": [
+                249109,
+                194952,
+                20307
+            ],
+            "type": "point",
+            "id": "2b8748d7553c4550803e20c3dfecf153"
+        },
+        {
+            "point": [
+                252500,
+                199256,
+                21179
+            ],
+            "type": "point",
+            "id": "2e3e683605b94ab18923f25ef9db9d32"
+        },
+        {
+            "point": [
+                244138,
+                199870,
+                20072
+            ],
+            "type": "point",
+            "id": "cec7e31045504c8a85eaa5943e3783f5"
+        },
+        {
+            "point": [
+                259996,
+                204638,
+                19804
+            ],
+            "type": "point",
+            "id": "672dbaa4e52a49be99ef8222199a6802"
+        },
+        {
+            "point": [
+                254861,
+                198220,
+                20917
+            ],
+            "type": "point",
+            "id": "dcc4e457cd6547a48433da47c1cbc0d5"
+        },
+        {
+            "point": [
+                249977,
+                203645,
+                20836
+            ],
+            "type": "point",
+            "id": "21308fc997ac426ea53363f7be95c089"
+        },
+        {
+            "point": [
+                255600,
+                201958,
+                21588
+            ],
+            "type": "point",
+            "id": "16f68d6039b64b908bf0f00ec2d8d22a"
+        },
+        {
+            "point": [
+                241752,
+                200038,
+                20121
+            ],
+            "type": "point",
+            "id": "026f106fdec94a758cf70deb04efaff5"
+        },
+        {
+            "point": [
+                246798,
+                194590,
+                20185
+            ],
+            "type": "point",
+            "id": "0ea45d79abff4d5380387ab6695aa475"
+        },
+        {
+            "point": [
+                250595,
+                194336,
+                20175
+            ],
+            "type": "point",
+            "id": "ca1a5ab04b824ab1bfcea4efb832bdf0"
+        },
+        {
+            "point": [
+                256566,
+                199542,
+                21032
+            ],
+            "type": "point",
+            "id": "d5505e12767f4a5396858ad61e1c06f2"
+        },
+        {
+            "point": [
+                250956,
+                200836,
+                21265
+            ],
+            "type": "point",
+            "id": "7520d46a659144479ff2bf83458775b2"
+        },
+        {
+            "point": [
+                248134,
+                195220,
+                20095
+            ],
+            "type": "point",
+            "id": "ccd81b2ca72c4a229af7326468e0652e"
+        },
+        {
+            "point": [
+                253188,
+                202069,
+                20611
+            ],
+            "type": "point",
+            "id": "6f2bc990a86d4d07b2807faab067e98c"
+        },
+        {
+            "point": [
+                263500,
+                204454,
+                19747
+            ],
+            "type": "point",
+            "id": "447fa46200fe4928b9d451fc89bd5219"
+        },
+        {
+            "point": [
+                249022,
+                199392,
+                21094
+            ],
+            "type": "point",
+            "id": "425222763c334ac699e0b123df91a51c"
+        },
+        {
+            "point": [
+                252004,
+                206420,
+                20886
+            ],
+            "type": "point",
+            "id": "26977bea842243d59eb5aba285c9aec1"
+        },
+        {
+            "point": [
+                254640,
+                199700,
+                21562
+            ],
+            "type": "point",
+            "id": "088e725259da4ccaa9481d3b58aa78d2"
+        },
+        {
+            "point": [
+                247720,
+                194448,
+                20331
+            ],
+            "type": "point",
+            "id": "576be52ac9ec4545a02f4c26e6b217ae"
+        },
+        {
+            "point": [
+                252120,
+                206778,
+                20950
+            ],
+            "type": "point",
+            "id": "c41e9b9ea66d4a65829990ce693f02f9"
+        },
+        {
+            "point": [
+                244972,
+                202660,
+                20147
+            ],
+            "type": "point",
+            "id": "2c5803b9d2794f60800aabf74517caa2"
+        },
+        {
+            "point": [
+                247978,
+                198714,
+                20973
+            ],
+            "type": "point",
+            "id": "0e9e90e3329047939f8fabcb9026c90a"
+        },
+        {
+            "point": [
+                254630,
+                200460,
+                21698
+            ],
+            "type": "point",
+            "id": "3419eeccd5974a79a176ba2f44ce77be"
+        },
+        {
+            "point": [
+                252263,
+                202040,
+                20659
+            ],
+            "type": "point",
+            "id": "9837fbdadcb44ca4a7b2b1a308c46121"
+        },
+        {
+            "point": [
+                246396,
+                201036,
+                20023
+            ],
+            "type": "point",
+            "id": "b4da75ee197e469eab173f37e0354654"
+        },
+        {
+            "point": [
+                241034,
+                198436,
+                20001
+            ],
+            "type": "point",
+            "id": "52ceb9e879fa4a1485900ea3bfa592c2"
+        },
+        {
+            "point": [
+                240136,
+                202205,
+                20482
+            ],
+            "type": "point",
+            "id": "f39a85574c9a485cbcfb9cc0766c624e"
+        },
+        {
+            "point": [
+                246718,
+                189788,
+                21065
+            ],
+            "type": "point",
+            "id": "d416e49b96de47ffb0d5045ffb55df73"
+        },
+        {
+            "point": [
+                239332,
+                201214,
+                20118
+            ],
+            "type": "point",
+            "id": "b8b87fd5f25c47ba836c7fdf5dffec7c"
+        },
+        {
+            "point": [
+                244944,
+                202610,
+                20154
+            ],
+            "type": "point",
+            "id": "301698d7d0974c02905e72c3e58f4146"
+        },
+        {
+            "point": [
+                252644,
+                203256,
+                20528
+            ],
+            "type": "point",
+            "id": "cad0e1cec0214dbc9ee92e3ddd789076"
+        },
+        {
+            "point": [
+                254612,
+                200380,
+                21671
+            ],
+            "type": "point",
+            "id": "fc55129a557a4d02a07e8ae9054d99c9"
+        },
+        {
+            "point": [
+                247102,
+                194966,
+                20197
+            ],
+            "type": "point",
+            "id": "169515c21d9d4900912829d72a087815"
+        },
+        {
+            "point": [
+                246534,
+                195000,
+                20618
+            ],
+            "type": "point",
+            "id": "448b0fa828ac4d3a94ac1d8a36d0eff1"
+        },
+        {
+            "point": [
+                242293,
+                198933,
+                20029
+            ],
+            "type": "point",
+            "id": "8d337323e2474ec9a8c849aa9d48ae10"
+        },
+        {
+            "point": [
+                252385,
+                198743,
+                21074
+            ],
+            "type": "point",
+            "id": "fb53ca4db6b9439381cf98fab5d3aeaa"
+        },
+        {
+            "point": [
+                263558,
+                204458,
+                19731
+            ],
+            "type": "point",
+            "id": "6452f6eab7154c4d89f1508d5fa94df2"
+        },
+        {
+            "point": [
+                244134,
+                192940,
+                20836
+            ],
+            "type": "point",
+            "id": "79906f2b191e4462b6b402ee245b0f7d"
+        },
+        {
+            "point": [
+                241924,
+                201042,
+                20564
+            ],
+            "type": "point",
+            "id": "613db11a6a1a4f8ab98edbf305ccd71c"
+        },
+        {
+            "point": [
+                244198,
+                197926,
+                20360
+            ],
+            "type": "point",
+            "id": "240b9e1c4a14438fbe46eb66b8a1e8c6"
+        },
+        {
+            "point": [
+                252456,
+                206112,
+                20745
+            ],
+            "type": "point",
+            "id": "5f5371b150484eb3867cc766861bd814"
+        },
+        {
+            "point": [
+                246440,
+                192384,
+                20933
+            ],
+            "type": "point",
+            "id": "5709b5c42b2846f4975dbf1f990b4fbd"
+        },
+        {
+            "point": [
+                248628,
+                195034,
+                20297
+            ],
+            "type": "point",
+            "id": "9e37eb9b5dc44c8198b20730aca12df6"
+        },
+        {
+            "point": [
+                254108,
+                202039,
+                20613
+            ],
+            "type": "point",
+            "id": "c389d9e743464653855e4d4d58fdc031"
+        },
+        {
+            "point": [
+                246128,
+                200532,
+                20891
+            ],
+            "type": "point",
+            "id": "011b6a4c0b314d208e1d0bf02ab56021"
+        },
+        {
+            "point": [
+                246722,
+                194988,
+                20434
+            ],
+            "type": "point",
+            "id": "b67753bc41e54d5bab1dc0572cebd693"
+        }
+    ],
+    "name": "OPC4_synapses"
+}
