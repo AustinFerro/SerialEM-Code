@@ -1,32 +1,34 @@
-function SimulatedPLs(OPC, opc_micro_contact, Real_distance, OPC_ran, numSamples, num_subset)
+function SimulatedPLs(dataType, OPC, opc_micro_contact, Real_distance, OPC_ran, numSamples, num_subset)
 
-if nargin < 6 || isempty(num_subset) %the number of simulated PLs/ sample
+if nargin < 7 || isempty(num_subset) %the number of simulated PLs/ sample
     num_subset = 50;
 end
 
-if nargin < 5 || isempty(numSamples) %How many time you are going to simulate 
+if nargin < 6 || isempty(numSamples) %How many time you are going to simulate 
     numSamples = 100;
 end
 
-if nargin < 4 || isempty(OPC_ran) % Random positions on the OPC surface
+if nargin < 5 || isempty(OPC_ran) % Random positions on the OPC surface
     % Frequency of the grating in cycles per pixel: Here 0.01 cycles per pixel:
     OPC_ran = 1;
 end
 
-if nargin < 3 || isempty(Real_distance) % Random positions on the OPC surface
-    % Frequency of the grating in cycles per pixel: Here 0.01 cycles per pixel:
+if nargin < 4 || isempty(Real_distance) % Real distances between x and y
     Real_distance = 1;
 end
 
-if nargin < 2 || isempty(opc_micro_contact) % input data of where microglia and OPCs are contacting eachother
-    % Tilt angle of the grating:
+if nargin <3 || isempty(opc_micro_contact) % input data of where microglia and OPCs are contacting eachother
     opc_micro_contact = 0;
 end
 
-if nargin < 1 || isempty(opc_micro_contact) % input data of where microglia and OPCs are contacting eachother
-    % Tilt angle of the grating:
+if nargin < 2 || isempty(OPC) % input data of where microglia and OPCs are contacting eachother
     OPC = 0;
 end
+
+if nargin < 2 || isempty(OPC) % input data of where microglia and OPCs are contacting eachother
+    OPC = 0;
+end
+
 
 % Initialize the storage for minimum distances for each sample
 sampled_min_distances = zeros(numSamples, size(opc_micro_contact, 1));
@@ -45,7 +47,7 @@ for j = 1:numSamples
     end
 end
 
-fileName = append('OPC_',string(OPC),'_simulatedDistances.csv');
+fileName = append('OPC_',string(OPC), dataType, '_SimulatedDistances.csv');
 data=reshape(sampled_min_distances,size(sampled_min_distances,2)*size(sampled_min_distances,1),1);
 
 %Saving and plotting data
