@@ -1,4 +1,4 @@
-function SimulatedPLs(dataType, OPC, opc_micro_contact, Real_distance, OPC_ran, numSamples, num_subset)
+function SimulatedPositions(dataType, OPC, opc_micro_contact, Real_distance, OPC_ran, numSamples, num_subset)
 
 if nargin < 7 || isempty(num_subset) %the number of simulated PLs/ sample
     num_subset = 50;
