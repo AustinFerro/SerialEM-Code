@@ -1,7 +1,7 @@
 # SerialEM Python Code and MatLab Code
 #Austin Ferro 2024
 
-This is a repository of python and matlab scripts and data that were used to analyze the Microns cortical 1mm^3 dataset (https://www.microns-explorer.org/cortical-mm3)
+This is a repository of python and matlab scripts and data that were used to analyze the Microns cortical 1mm^3 dataset (https://www.microns-explorer.org/cortical-mm3)[1]
 
 In brief Cell_Colli.py is a script that will take multiple segmented objects within the Microns dataset and localize where those objects collide. Cell_Collie will read in .json files of specific locations (in this analysis, the locations of phagolysosomes(PLs)) to see where the collisions are in relation to those objects as well as provide randomly sampled positions on any specific segmented object's mesh. 
 
@@ -27,3 +27,9 @@ import trimesh
 import json
 from scipy.spatial import cKDTree
 import time
+
+
+
+References 
+MICrONs Consortium et al. Functional connectomics spanning multiple areas of mouse visual cortex.
+bioRxiv 2021.07.28.454025; doi: https://doi.org/10.1101/2021.07.28.454025
