@@ -30,6 +30,6 @@ import time
 
 
 
-References 
-MICrONs Consortium et al. Functional connectomics spanning multiple areas of mouse visual cortex.
+References: 
+1) MICrONs Consortium et al. Functional connectomics spanning multiple areas of mouse visual cortex.
 bioRxiv 2021.07.28.454025; doi: https://doi.org/10.1101/2021.07.28.454025
