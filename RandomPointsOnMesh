@@ -1,0 +1,121 @@
+"""
+Created on Thu Aug  1 09:40:43 2024
+
+@author: Austin Ferro
+
+Ran_Points is a python code that will take a given mesh and sample num_samples (set to 1000) random points within the max distance (set to 80 nm)
+
+Will output timeout error if the code runs longer than 1 minute 
+
+
+"""
+
+import trimesh
+import numpy as np
+from caveclient import CAVEclient
+from meshparty import trimesh_io, trimesh_vtk, skeletonize, skeleton, skeleton_io
+from pathlib import Path
+import time  # Import the time module
+
+def sample_points_from_mesh_within_distance(mesh, soma, max_distance=80000, num_samples=1000, timeout=60):
+    """
+    Randomly sample points on the surface of a mesh within a specified distance from the soma.
+
+    Parameters:
+    - mesh (trimesh.Trimesh): The mesh from which to sample points.
+    - soma (np.array): The scaled coordinates of the soma position.
+    - max_distance (float): Maximum allowed distance from the soma.
+    - num_samples (int): Number of points to sample.
+    - timeout (int): Maximum time allowed for the function to run in seconds.
+
+    Returns:
+    - np.array: Array of points sampled from the mesh surface within the specified distance.
+
+    Raises:
+    - TimeoutError: If the sampling takes longer than the specified timeout.
+    """
+    points_within_distance = []
+    start_time = time.time()  # Record the start time
+
+    # Keep sampling until we reach the required number of valid points
+    while len(points_within_distance) < num_samples:
+        # Check for timeout
+        elapsed_time = time.time() - start_time
+        if elapsed_time > timeout:
+            raise TimeoutError("Sampling points took longer than the allowed time limit of 1 minute.")
+
+        remaining_samples = num_samples - len(points_within_distance)
+
+        # Calculate the areas of each face of the mesh
+        face_areas = mesh.area_faces
+
+        # Normalize the areas to a probability distribution
+        probabilities = face_areas / face_areas.sum()
+
+        # Choose faces randomly according to their area
+        chosen_faces = np.random.choice(len(face_areas), size=remaining_samples, p=probabilities)
+
+        # Barycentric coordinates for random points within each face
+        u = np.random.rand(remaining_samples)
+        v = np.random.rand(remaining_samples)
+        w = 1 - u - v
+        mask = u + v > 1
+        u[mask], v[mask] = 1 - u[mask], 1 - v[mask]  # Reflect points back to the triangle if they fall outside
+
+        # Calculate the actual coordinates of the points
+        vertices = mesh.vertices[mesh.faces[chosen_faces]]
+        sampled_points = (vertices[:, 0, :] * u[:, np.newaxis] +
+                          vertices[:, 1, :] * v[:, np.newaxis] +
+                          vertices[:, 2, :] * w[:, np.newaxis])
+
+        # Calculate distances to the soma
+        distances_to_soma = np.linalg.norm(sampled_points - soma, axis=1)
+
+        # Filter points within the max_distance
+        valid_points = sampled_points[distances_to_soma <= max_distance]
+
+        # Add valid points to the list
+        points_within_distance.extend(valid_points)
+
+    # Convert list to numpy array and return exactly num_samples
+    return np.array(points_within_distance[:num_samples])
+
+print("Script started")
+# MINNIE
+client = CAVEclient()
+client = CAVEclient('minnie65_public')
+mm = trimesh_io.MeshMeta(cv_path=client.info.segmentation_source(),
+                         disk_cache_path='minnie65_v117_meshes', map_gs_to_https=True)
+
+opcname = "OPC9"
+OPC = 864691135356123122
+soma = np.array([198448, 180227, 21702])
+OPC_mesh = mm.mesh(seg_id=OPC)
+scale = np.array([4, 4, 40])
+
+# Scale the soma position
+soma_scaled = soma * scale
+
+# Sample points with the constraint of being within 80 micrometers from the scaled soma
+num_samples = 1000  # Number of points you want to sample
+
+try:
+    sampled_points = sample_points_from_mesh_within_distance(OPC_mesh, soma_scaled, max_distance=80000, num_samples=num_samples)
+except TimeoutError as e:
+    print(e)
+    exit(1)  # Exit the script if a timeout error occurs
+
+# Calculate distances from these points to the soma (for verification, already constrained)
+RanPt_distance_to_soma = np.linalg.norm(sampled_points - soma_scaled, axis=1)
+RanPt_dis = RanPt_distance_to_soma.reshape(-1, 1)
+
+# Combine data for output
+data_pts = np.hstack((sampled_points, sampled_points / scale, RanPt_dis))
+
+RanOPC_points_filename = Path(f"C:/Users/thech/Documents/PyCode/MicronsEMdata/{opcname}_Micro_Contacts/{opcname}_RanPoints.csv")
+RanOPC_points_filename.parent.mkdir(parents=True, exist_ok=True)
+
+# Save to CSV
+np.savetxt(RanOPC_points_filename, data_pts, delimiter=",", header="x,y,z,scaled x, scaled y, scaled z, distance", comments='', fmt='%.6f')
+
+print(f"Sampled points saved to {RanOPC_points_filename}")
